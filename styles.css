@@ -26,14 +26,57 @@ body {
   align-items: center;
 }
 .menu__item {
-  padding: 0 13px;
+  position: relative;
+  margin-right: 26px;
+  font:500 18px/21px 'Roboto',arial,Helvetica,sans-serif;
+  color:#000;
+  text-decoration: none;
+  transition: opacity .5s;
+}
+.menu__item_active:after {
+  display:block;
+  content:'';
+  width:100%;
+  height:3px;
+  background:#0056EC;
+  position:absolute;
 }
 .menu__item:last-child {
-  padding-right: 0;
+  margin-right: 0;
 }
 p {
   font-family: arial;
 }
 .title {
   font-family: Roboto;
+}
+.menu__item:hover{
+  opacity: 0.5;
+}
+.menu__item:hover:after {
+  position: absolute;
+  left: 0;
+  display: block;
+  content:'';
+  width: 100%;
+  height: 3px;
+  background: #0056EC;
+}
+.menu__item:after {
+  position: absolute;
+  left: 0;
+  display: block;
+  content:'':
+  width:0;
+  height: 3px;
+  background: #0056EC;
+  opacity: 0.5;
+  transition: opacity .5s, width .5s;
+}
+.menu__item:hover {
+  opacity: 0.5;
+}
+.menu__item:hover:after,menu__item_active:after {
+  opacity: 1;
+  width: 100%;
 }
